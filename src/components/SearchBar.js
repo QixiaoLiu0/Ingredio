@@ -24,10 +24,10 @@ export default function SearchBar({}) {
   }, 300);
 
   return (
-    <div className="p-4 flex justify-center mb-8">
+    <div className="p-4 flex justify-center my-8">
       <input
         className="border-2 border-black p-2 min-w-1/3"
-        placeholder="enter ingredients..."
+        placeholder="Please enter ingredient..."
         onChange={e => handleSearch(e.target.value)}
         defaultValue={searchParams.get("q")?.toString()}
       />
