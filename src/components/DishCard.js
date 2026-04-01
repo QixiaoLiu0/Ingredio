@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function DishCard({ imgUrl, dishName }) {
   return (
     <Link
-      href="#"
+      href={`/dish/${dishName}`} // points to dynamic router: dish/[dishName]
       className="border-2 border-red-200 aspect-ratio: 1 / 1 overflow-hidden "
     >
       <div className="h-[90%] w-full">

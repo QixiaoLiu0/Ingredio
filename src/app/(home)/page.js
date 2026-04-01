@@ -1,3 +1,6 @@
+/**
+ * a server component which does not have page interactions
+ */
 import DishCard from "@/components/DishCard";
 import SearchBar from "@/components/SearchBar";
 import { fetchDishes } from "@/services/mealService";
