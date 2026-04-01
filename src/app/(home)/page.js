@@ -20,6 +20,12 @@ export default async function Page({ searchParams }) {
               dishName={dish.strMeal}
             />
           ))}
+        {!dishes && (
+          <h2>
+            Dises not found by{" "}
+            <span className="font-bold">{userSearchTerm}</span>
+          </h2>
+        )}
       </div>
     </main>
   );
