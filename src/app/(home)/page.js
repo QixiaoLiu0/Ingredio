@@ -1,11 +1,11 @@
 import DishCard from "@/components/DishCard";
-
+import SearchBar from "@/components/SearchBar";
 export default function Page() {
   return (
     <main>
-      <h1>home page</h1>
+      <SearchBar />
       <br />
-      <div className="grid grid-cols-5 gap-10">
+      <div className="dish-card-wrapper grid grid-cols-5 gap-10">
         <DishCard />
         <DishCard />
         <DishCard />
