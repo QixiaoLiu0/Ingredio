@@ -1,17 +1,25 @@
 import DishCard from "@/components/DishCard";
 import SearchBar from "@/components/SearchBar";
-export default function Page() {
+import { fetchDishes } from "@/services/mealService";
+export default async function Page({ searchParams }) {
+  const resolvedSearchParams = await searchParams; //searchParams became a Promise since Next.js 15
+  const userSearchTerm = resolvedSearchParams?.q || "";
+  console.log(userSearchTerm);
+
+  const dishes = await fetchDishes(userSearchTerm);
+
   return (
-    <main>
+    <main className="mx-20">
       <SearchBar />
-      <br />
-      <div className="dish-card-wrapper grid grid-cols-5 gap-10">
-        <DishCard />
-        <DishCard />
-        <DishCard />
-        <DishCard />
-        <DishCard />
-        <DishCard />
+      <div className="dish-card-wrapper grid grid-cols-5 gap-20">
+        {dishes &&
+          dishes.map(dish => (
+            <DishCard
+              key={dish.idMeal}
+              imgUrl={dish.strMealThumb}
+              dishName={dish.strMeal}
+            />
+          ))}
       </div>
     </main>
   );
