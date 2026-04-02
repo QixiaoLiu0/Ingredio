@@ -7,7 +7,7 @@ import { fetchDishes } from "@/services/mealService";
 export default async function Page({ searchParams }) {
   const resolvedSearchParams = await searchParams; //searchParams became a Promise since Next.js 15
   const userSearchTerm = resolvedSearchParams?.q || "";
-  console.log(userSearchTerm);
+  // console.log(userSearchTerm);
 
   const dishes = await fetchDishes(userSearchTerm);
 

@@ -1,13 +1,7 @@
 import Link from "next/link";
-import {
-  HomeIcon,
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@heroicons/react/24/outline";
+import { HomeIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-export default function BreadcrumbNav({ dishName }) {
-  console.log(dishName);
-
+export default function BreadcrumbNav() {
   return (
     <nav className="flex flex-row w-100 items-center">
       <Link
@@ -18,8 +12,6 @@ export default function BreadcrumbNav({ dishName }) {
         <HomeIcon className="size-4 mx-1" />
         <span>Home</span>
       </Link>
-      <ChevronRightIcon className="size-3 mx-1" />
-      <span className="cursor-default"> {dishName || "milk"} </span>
     </nav>
   );
 }

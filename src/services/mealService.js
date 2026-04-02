@@ -12,5 +12,9 @@ export async function fetchDishes(ingredient) {
 export async function fetchDishDetails(dishName) {
   const res = await fetch(`${baseUrl}search.php?s=${dishName}`);
   const data = await res.json();
-  return data.meals[0];
+  const dishDetails = data.meals?.[0];
+  if (!dishDetails) {
+    return null;
+  }
+  return dishDetails;
 }
